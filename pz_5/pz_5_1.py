@@ -3,7 +3,7 @@
 # получится нуль?
 
 num = input("Введите целое трехзначное число")
-while type(num) != int:
+while type(num) != int:   # обработка исключений
     try:
         num = int(num)
         if 100 <= num <= 999:  # Проверка на трехзначность и положительность
@@ -16,12 +16,12 @@ while type(num) != int:
         num = input("Введите целое трехзначное число")
 
 def steps_until_zero (num):
-    t = 0
+    t = 0     # счетчик
     while num != 0:
-        a = num // 100
+        a = num // 100   # сотни, десятки и единицы
         b = (num // 10) % 10
         c = num % 10
-        d = a + b + c
+        d = a + b + c  # сумма цифр числа
         num = num - d
         t += 1
     return t
