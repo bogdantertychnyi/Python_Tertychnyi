@@ -11,11 +11,11 @@ while type(num) != int:   # обработка исключений
         else:
             print("Ошибка: Число должно быть трехзначным и положительным")
             num = input("Введите целое трехзначное число")
-    except:
+    except ValueError:
         print("Неправильно ввели!")
         num = input("Введите целое трехзначное число")
 
-def steps_until_zero (num):
+def steps_until_zero(num):
     t = 0     # счетчик
     while num != 0:
         a = num // 100   # сотни, десятки и единицы
