@@ -19,7 +19,7 @@ def steps_until_zero (num):
     t = 0
     while num != 0:
         a = num // 100
-        b = num // 10 % 10
+        b = (num // 10) % 10
         c = num % 10
         d = a + b + c
         num = num - d
