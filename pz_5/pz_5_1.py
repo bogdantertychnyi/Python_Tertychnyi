@@ -2,28 +2,33 @@
 # результата вновь вычли сумму его цифр и т. д. Через сколько таких действий
 # получится нуль?
 
-num = input("Введите целое трехзначное число")
-while True:   # обработка исключений
-    try:
-        num = int(num)
-        if 100 <= num <= 999:  # Проверка на трехзначность и положительность
-            break
-        else:
-            print("Ошибка: Число должно быть трехзначным и положительным")
-            num = input("Введите целое трехзначное число")
-    except ValueError:
-        print("Неправильно ввели!")
-        num = input("Введите целое трехзначное число")
+def sum_of_digits(num):
+    total = 0
+    while num > 0:
+        total += num % 10  # добавляем последнюю цифру
+        num //= 10  # удаляем последнюю цифру
+    return total
 
 def steps_until_zero(num):
-    t = 0     # счетчик
+    t = 0  # счетчик
     while num != 0:
-        a = num // 100   # сотни, десятки и единицы
-        b = (num // 10) % 10
-        c = num % 10
-        d = a + b + c  # сумма цифр числа
+        d = sum_of_digits(num)  # сумма цифр числа
         num = num - d
         t += 1
     return t
 
+# Ввод числа
+num = input("Введите целое число: ")
+while True:  # обработка исключений
+    try:
+        num = int(num)
+        if num > 0:  # Проверка на положительность
+            break
+        else:
+            num = abs(num)
+    except ValueError:
+        print("Неправильно ввели! Попробуйте снова.")
+        num = input("Введите целое число: ")
+
+# Вывод результата
 print(steps_until_zero(num))
