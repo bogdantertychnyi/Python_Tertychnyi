@@ -8,7 +8,9 @@ rus_eng = { "окно": "window",
     "цветок": "flower",
     "мужчина": "man",
     "женщина": "woman",
-    "чай": "tea" }
+    "чай": "tea",
+    "стол": "table",
+    "мяч": "ball" }
 
 translate = input("Введите слово на русском языке: ")
 translation = rus_eng.get(translate)
