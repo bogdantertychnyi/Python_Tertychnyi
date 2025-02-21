@@ -10,8 +10,9 @@ rus_eng = { "окно": "window",
     "женщина": "woman",
     "чай": "tea" }
 
-translate = input("Введите слово на русском языке : ")
-if translate in rus_eng:
+translate = input("Введите слово на русском языке: ")
+translation = rus_eng.get(translate)
+if translation is not None:
   print("Перевод: ", rus_eng[translate])
 else:
   print("Этого слова нет в словаре.")
