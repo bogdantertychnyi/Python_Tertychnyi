@@ -3,11 +3,11 @@
 # строка содержит только один пробел, то вывести пустую строку.
 
 S = input('Введите строку:')
-cpr = S.count(" ")
+cpr = S.count(" ")    # количество пробелов
 start = S.find(" ") + 1
 end = S.rfind(" ")
 if cpr > 1:
-    S1 = S[start:end]
+    S1 = S[start:end]    # новая строка
 else:
     S1 = ""
 print(S1)
