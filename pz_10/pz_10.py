@@ -11,15 +11,16 @@ domknigi = {"Толстой","Грибоедов","Чехов","Пушкин"}
 bookmarket ={"Пушкин", "Достоевский", "Маяковский"}
 galery = {"Чехов","Тютчев","Пушкин"}
 
+pushtutch = {"Пушкин", "Тютчев"}
 shops = set()
 
-if "Пушкин" and "Тютчев" in magistr:
+if magistr & pushtutch == {"Пушкин", "Тютчев"}:
     shops.add("Магистр")
-if "Пушкин" and "Тютчев" in domknigi:
+if domknigi & pushtutch == {"Пушкин", "Тютчев"}:
     shops.add("ДомКниги")
-if "Пушкин" and "Тютчев" in bookmarket:
+if bookmarket & pushtutch == {"Пушкин", "Тютчев"}:
     shops.add("БукМаркет")
-if "Пушкин" and "Тютчев" in galery:
+if galery & pushtutch == {"Пушкин", "Тютчев"}:
     shops.add("Галерея")
 
 print("Магазины, в которых есть книги Пушкина и Тютчева:", shops)
